@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import Games from "@/pages/Games";
 import Contact from "@/pages/Contact";
 import CustomPage from "@/pages/CustomPage";
+import HiddenPage from "@/pages/HiddenPage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => {
               <Route path="/games" element={<Games />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/custom" element={<CustomPage />} />
+              <Route path="/hidden" element={<HiddenPage />} />
             </Routes>
           </div>
         </Router>
