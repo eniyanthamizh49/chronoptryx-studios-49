@@ -1,53 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Us' },
-    { id: 'games', label: 'Our Games' },
-    { id: 'contact', label: 'Contact Us' },
+    { id: 'home', label: 'Home', path: '/' },
+    { id: 'about', label: 'About Us', path: '/about' },
+    { id: 'games', label: 'Our Games', path: '/games' },
+    { id: 'contact', label: 'Contact Us', path: '/contact' },
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleMenuClick = () => {
     setIsMobileMenuOpen(false);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
-      let currentSection = 'home';
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom > 100) {
-            currentSection = section;
-          }
-        }
-      }
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div 
+          <Link 
+            to="/"
             className="flex items-center space-x-3 cursor-pointer group"
-            onClick={() => scrollToSection('home')}
           >
             <img 
               src="/lovable-uploads/4456bff2-7844-4f35-bebd-a20762fef698.png" 
@@ -62,18 +38,18 @@ const Header = () => {
                 Studios
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                to={item.path}
+                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -96,13 +72,14 @@ const Header = () => {
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`nav-link text-left ${activeSection === item.id ? 'active' : ''}`}
+                  to={item.path}
+                  onClick={handleMenuClick}
+                  className={`nav-link text-left ${location.pathname === item.path ? 'active' : ''}`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </div>
           </nav>
