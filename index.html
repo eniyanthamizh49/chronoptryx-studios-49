@@ -1,29 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronoptryx Studios - Indie Game Development</title>
-    <meta name="description" content="Chronoptryx Studios - Crafting immersive 2D & 3D worlds with Unity and Blender. Indie game development studio with over 2 years of experience." />
-    <meta name="author" content="Chronoptryx Studios" />
-    <link rel="icon" href="/lovable-uploads/4456bff2-7844-4f35-bebd-a20762fef698.png" type="image/png">
+    <meta name="description" content="Chronoptryx Studios - Crafting immersive 2D & 3D worlds with Unity and Blender. Indie game development studio with over 2 years of experience.">
+    <meta name="author" content="Chronoptryx Studios">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
 
-    <meta property="og:title" content="Chronoptryx Studios - Indie Game Development" />
-    <meta property="og:description" content="Crafting immersive 2D & 3D worlds with Unity and Blender" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/lovable-uploads/4456bff2-7844-4f35-bebd-a20762fef698.png" />
+    <meta property="og:title" content="Chronoptryx Studios - Indie Game Development">
+    <meta property="og:description" content="Crafting immersive 2D & 3D worlds with Unity and Blender">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/logo.png">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@chronoptryx" />
-    <meta name="twitter:image" content="/lovable-uploads/4456bff2-7844-4f35-bebd-a20762fef698.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@chronoptryx">
+    <meta name="twitter:image" content="./assets/logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="#home" class="logo-link">
+                    <img src="./assets/logo.png" alt="Chronoptryx Studios Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1 class="logo-title">Chronoptryx</h1>
+                        <p class="logo-subtitle">Studios</p>
+                    </div>
+                </a>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#home" class="nav-link active" data-page="home">Home</a>
+                    <a href="#about" class="nav-link" data-page="about">About Us</a>
+                    <a href="#games" class="nav-link" data-page="games">Our Games</a>
+                    <a href="#contact" class="nav-link" data-page="contact">Contact Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#home" class="mobile-nav-link active" data-page="home">Home</a>
+                <a href="#about" class="mobile-nav-link" data-page="about">About Us</a>
+                <a href="#games" class="mobile-nav-link" data-page="games">Our Games</a>
+                <a href="#contact" class="mobile-nav-link" data-page="contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="container">
+                <div class="hero-section">
+                    <h1 class="hero-title">Welcome to Chronoptryx Studios</h1>
+                    <p class="hero-subtitle">
+                        We are an indie game development studio passionate about creating immersive gaming experiences. 
+                        With expertise in 2D and 3D game development using Unity and beautiful art created with Blender, 
+                        we bring unique worlds to life.
+                    </p>
+                    <button class="btn-gaming" onclick="showPage('games')">Check Our Games</button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3 class="stat-number">2+</h3>
+                            <p class="stat-label">Years of Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number">2</h3>
+                            <p class="stat-label">Team Members</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number">3</h3>
+                            <p class="stat-label">Published Games</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div class="tech-section">
+                    <h2 class="section-title">Our Technology Stack</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h3 class="tech-title">Unity Engine</h3>
+                            <p class="tech-description">
+                                We use Unity for both 2D and 3D game development, leveraging its powerful 
+                                tools and cross-platform capabilities.
+                            </p>
+                        </div>
+                        <div class="tech-card">
+                            <h3 class="tech-title">Blender</h3>
+                            <p class="tech-description">
+                                Our 3D models, animations, and visual effects are crafted using Blender's 
+                                comprehensive suite of tools.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container">
+                <h1 class="page-title">About Chronoptryx Studios</h1>
+                
+                <div class="about-content">
+                    <div class="about-section">
+                        <h2 class="section-title">Our Story</h2>
+                        <p class="about-text">
+                            Founded with a passion for creating immersive gaming experiences, Chronoptryx Studios 
+                            has been developing innovative 2D and 3D games for over 2 years. Our small but dedicated 
+                            team of 2 professionals brings together expertise in game design, programming, and digital art.
+                        </p>
+                        <p class="about-text">
+                            We specialize in using industry-standard tools like Unity Engine for game development 
+                            and Blender for 3D modeling and animation, ensuring our games meet the highest quality standards.
+                        </p>
+                    </div>
+
+                    <div class="team-section">
+                        <h2 class="section-title">Our Team Specializations</h2>
+                        <div class="team-grid">
+                            <div class="team-card">
+                                <h3 class="team-role">Design</h3>
+                                <p class="team-description">
+                                    Crafting engaging game mechanics, user experience design, and creative direction 
+                                    that brings our vision to life.
+                                </p>
+                            </div>
+                            <div class="team-card">
+                                <h3 class="team-role">Programming</h3>
+                                <p class="team-description">
+                                    Building robust game systems, implementing gameplay mechanics, and ensuring 
+                                    optimal performance across platforms.
+                                </p>
+                            </div>
+                            <div class="team-card">
+                                <h3 class="team-role">Art</h3>
+                                <p class="team-description">
+                                    Creating stunning visual assets, 3D models, animations, and immersive 
+                                    environments using professional tools.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Page -->
+        <section id="games" class="page">
+            <div class="container">
+                <h1 class="page-title">Our Creations</h1>
+                <p class="page-subtitle">Explore the games we've crafted with passion and dedication</p>
+
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-thumbnail">
+                            <img src="./assets/game1.png" alt="Mystic Quest Adventures" class="game-image">
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">Mystic Quest Adventures</h3>
+                            <p class="game-description">
+                                An epic fantasy RPG where players embark on a mystical journey through 
+                                enchanted realms, solving puzzles and battling mythical creatures.
+                            </p>
+                            <p class="game-platform">Platform: PC, Mobile</p>
+                            <a href="#" class="game-link btn-gaming">Play Now</a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-thumbnail">
+                            <img src="./assets/game2.png" alt="Cyber Runner 2084" class="game-image">
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">Cyber Runner 2084</h3>
+                            <p class="game-description">
+                                A futuristic endless runner set in a cyberpunk world. Navigate through 
+                                neon-lit cityscapes while avoiding obstacles and collecting power-ups.
+                            </p>
+                            <p class="game-platform">Platform: Mobile, Web</p>
+                            <a href="#" class="game-link btn-gaming">Play Now</a>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-thumbnail">
+                            <img src="./assets/game3.png" alt="Space Colony Builder" class="game-image">
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">Space Colony Builder</h3>
+                            <p class="game-description">
+                                Build and manage your own space colony in this strategic simulation game. 
+                                Research technologies, manage resources, and explore the galaxy.
+                            </p>
+                            <p class="game-platform">Platform: PC, Mac</p>
+                            <a href="#" class="game-link btn-gaming">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon">
+                    <h2 class="section-title">More Games Coming Soon!</h2>
+                    <p class="coming-soon-text">
+                        We're constantly working on new and exciting projects. Stay tuned for more amazing games!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="container">
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-subtitle">We'd love to hear from you! Reach out through any of these channels.</p>
+
+                <div class="contact-grid">
+                    <a href="https://instagram.com/chronoptryx" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">📷</div>
+                        <h3 class="contact-name">Instagram</h3>
+                        <p class="contact-description">Follow us for behind-the-scenes content and game updates</p>
+                    </a>
+
+                    <a href="mailto:contact@chronoptryx.com" class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3 class="contact-name">Gmail</h3>
+                        <p class="contact-description">Send us an email for business inquiries or support</p>
+                    </a>
+
+                    <a href="https://discord.gg/chronoptryx" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">💬</div>
+                        <h3 class="contact-name">Discord</h3>
+                        <p class="contact-description">Join our community and chat with other gamers</p>
+                    </a>
+                </div>
+
+                <div class="response-time">
+                    <p class="response-text">We typically respond within 24 hours</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
